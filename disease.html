@@ -1,0 +1,333 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Crop Disease Detection | Smart Crop Advisor</title>
+
+    <link rel="stylesheet" href="disease.css">
+</head>
+
+<body>
+
+    <header class="topbar">
+
+        <div class="brand">
+            <div class="logo-placeholder">
+        <img src="images/logo.jpg" alt="Smart Crop Advisor Logo">
+        </div>
+
+            <div>
+                <h2>Smart Crop Advisor</h2>
+                <span id="brandSubtitle">AI Powered Agriculture</span>
+            </div>
+        </div>
+
+        <select id="languageSelect" class="language-select">
+            <option value="en">🇬🇧 English</option>
+            <option value="hi">🇮🇳 हिन्दी</option>
+            <option value="bho">🟠 भोजपुरी</option>
+        </select>
+
+    </header>
+
+
+    <main class="container">
+
+        <section class="hero">
+
+            <div class="hero-badge">
+                🔬 AI CROP HEALTH
+            </div>
+
+            <h1 id="pageTitle">
+                Crop Disease Detection
+            </h1>
+
+            <p id="pageDescription">
+                Take or upload a photo of your crop and let AI analyze
+                possible diseases, symptoms and treatment.
+            </p>
+
+        </section>
+
+
+        <section class="detection-card">
+
+            <div class="upload-area" id="uploadArea">
+
+                <div class="upload-icon">
+                    📸
+                </div>
+
+                <h2 id="uploadTitle">
+                    Upload Crop Photo
+                </h2>
+
+                <p id="uploadText">
+                    Take a clear photo of the affected crop leaf or plant.
+                </p>
+
+                <div class="upload-buttons">
+
+                    <button class="primary-btn" id="cameraBtn">
+                        📷 <span id="cameraText">Take Photo</span>
+                    </button>
+
+                    <button class="secondary-btn" id="uploadBtn">
+                        📁 <span id="uploadTextBtn">Upload Photo</span>
+                    </button>
+
+                </div>
+
+                <input
+                    type="file"
+                    id="imageInput"
+                    accept="image/*"
+                    capture="environment"
+                    hidden
+                >
+
+            </div>
+
+
+            <div class="preview-container" id="previewContainer">
+
+                <div class="preview-header">
+
+                    <h3 id="previewTitle">
+                        Selected Image
+                    </h3>
+
+                    <button id="removeImageBtn" class="remove-btn">
+                        ✕
+                    </button>
+
+                </div>
+
+                <img
+                    id="previewImage"
+                    src=""
+                    alt="Crop preview"
+                >
+
+                <button
+                    id="analyzeBtn"
+                    class="analyze-btn"
+                >
+                    🔬 <span id="analyzeText">Analyze Crop Disease</span>
+                </button>
+
+            </div>
+
+
+            <div class="loading-container" id="loadingContainer">
+
+                <div class="loader"></div>
+
+                <h3 id="loadingTitle">
+                    AI is analyzing your crop...
+                </h3>
+
+                <p id="loadingText">
+                    Please wait while we examine the image.
+                </p>
+
+            </div>
+
+
+            <div class="error-box" id="errorBox">
+
+                <div class="error-icon">⚠️</div>
+
+                <div>
+                    <strong id="errorTitle">
+                        Analysis Failed
+                    </strong>
+
+                    <p id="errorMessage">
+                        Something went wrong. Please try again.
+                    </p>
+                </div>
+
+            </div>
+
+
+            <section class="result-container" id="resultContainer">
+
+                <div class="result-header">
+
+                    <div>
+                        <span class="result-label" id="resultLabel">
+                            AI ANALYSIS
+                        </span>
+
+                        <h2 id="resultTitle">
+                            Crop Health Report
+                        </h2>
+                    </div>
+
+                    <div
+                        class="confidence"
+                        id="confidenceBox"
+                    >
+                        <span id="confidenceLabel">
+                            Confidence
+                        </span>
+
+                        <strong id="confidenceValue">
+                            --
+                        </strong>
+                    </div>
+
+                </div>
+
+
+                <div class="result-grid">
+
+                    <div class="info-card crop-card">
+
+                        <div class="info-icon">
+                            🌾
+                        </div>
+
+                        <div>
+                            <span id="cropLabel">
+                                Crop
+                            </span>
+
+                            <h3 id="cropName">
+                                --
+                            </h3>
+                        </div>
+
+                    </div>
+
+
+                    <div class="info-card disease-card">
+
+                        <div class="info-icon">
+                            🦠
+                        </div>
+
+                        <div>
+                            <span id="diseaseLabel">
+                                Disease
+                            </span>
+
+                            <h3 id="diseaseName">
+                                --
+                            </h3>
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+                <div class="result-section">
+
+                    <div class="section-heading">
+                        <span>🔍</span>
+                        <h3 id="symptomsHeading">
+                            Detected Symptoms
+                        </h3>
+                    </div>
+
+                    <p id="symptomsText">
+                        --
+                    </p>
+
+                </div>
+
+
+                <div class="result-section treatment-section">
+
+                    <div class="section-heading">
+                        <span>💊</span>
+                        <h3 id="treatmentHeading">
+                            Recommended Treatment
+                        </h3>
+                    </div>
+
+                    <p id="treatmentText">
+                        --
+                    </p>
+
+                </div>
+
+
+                <div class="result-section prevention-section">
+
+                    <div class="section-heading">
+                        <span>🛡️</span>
+                        <h3 id="preventionHeading">
+                            Prevention
+                        </h3>
+                    </div>
+
+                    <p id="preventionText">
+                        --
+                    </p>
+
+                </div>
+
+
+                <div class="result-section advice-section">
+
+                    <div class="section-heading">
+                        <span>ℹ️</span>
+                        <h3 id="adviceHeading">
+                            Farmer Advisory
+                        </h3>
+                    </div>
+
+                    <p id="adviceText">
+                        --
+                    </p>
+
+                </div>
+
+
+                <button
+                    id="newAnalysisBtn"
+                    class="new-analysis-btn"
+                >
+                    🔄 <span id="newAnalysisText">Analyze Another Photo</span>
+                </button>
+
+            </section>
+
+        </section>
+
+
+        <section class="notice">
+
+            <div>💡</div>
+
+            <p id="noticeText">
+                For better results, take a clear photo of the affected
+                leaf or plant in good lighting. AI results are advisory
+                and should be verified with a local agriculture expert
+                when needed.
+            </p>
+
+        </section>
+
+    </main>
+
+
+    <footer>
+
+        <p>
+            © 2026 Smart Crop Advisor
+        </p>
+
+    </footer>
+
+
+    <script src="disease.js"></script>
+
+</body>
+</html>

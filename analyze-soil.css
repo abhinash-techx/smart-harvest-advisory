@@ -1,0 +1,1406 @@
+
+/* =========================================================
+   SOIL ANALYSIS PAGE
+   ---------------------------------------------------------
+   Main color theme:
+   - Green: #21863e
+   - Dark Green: #174c27
+   - Light Green: #edf6ee
+   - Background: #f4f8f3
+   ========================================================= */
+
+
+/* =========================================================
+   1. GLOBAL RESET & BASIC STYLES
+   ========================================================= */
+
+/* Remove default browser spacing */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Smooth scrolling when clicking page links */
+html {
+    scroll-behavior: smooth;
+}
+
+/* Main page body */
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background: #f4f8f3;
+    color: #183b1f;
+    min-height: 100vh;
+}
+
+/* Make form elements use the same font as the page */
+button,
+input,
+select {
+    font: inherit;
+}
+
+
+/* =========================================================
+   2. HEADER
+   ========================================================= */
+
+.header {
+    width: 100%;
+    padding: 16px 7%;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    background: #ffffff;
+    border-bottom: 1px solid #e2ebe1;
+
+    /* Header stays at the top while scrolling */
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+
+/* Website logo */
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+
+    font-size: 21px;
+    font-weight: 800;
+    color: #176b35;
+}
+
+
+/* Language dropdown */
+.language-select {
+    padding: 10px 14px;
+
+    border-radius: 10px;
+    border: 1px solid #cbdcca;
+
+    background: #ffffff;
+    color: #183b1f;
+
+    font-size: 14px;
+    font-weight: 700;
+
+    cursor: pointer;
+    outline: none;
+}
+
+
+/* =========================================================
+   3. MAIN SOIL ANALYSIS CONTAINER
+   ========================================================= */
+
+.soil-container {
+    width: 90%;
+    max-width: 1200px;
+
+    margin: auto;
+    padding: 58px 0;
+}
+
+
+/* =========================================================
+   4. HERO / INTRO SECTION
+   ========================================================= */
+
+.hero-section {
+    text-align: center;
+
+    max-width: 780px;
+    margin: 0 auto 45px;
+}
+
+
+/* Small green badge above heading */
+.badge {
+    display: inline-block;
+
+    padding: 8px 16px;
+    margin-bottom: 17px;
+
+    border-radius: 50px;
+
+    background: #e3f5e7;
+    color: #19713a;
+
+    font-size: 14px;
+    font-weight: 800;
+}
+
+
+/* Main page heading */
+.hero-section h1 {
+    font-size: clamp(34px, 5vw, 58px);
+    line-height: 1.1;
+
+    color: #123c1e;
+
+    margin-bottom: 16px;
+}
+
+
+/* Hero description */
+.hero-section p {
+    max-width: 700px;
+
+    margin: auto;
+
+    font-size: 17px;
+    line-height: 1.7;
+
+    color: #647268;
+}
+
+
+/* =========================================================
+   5. ANALYSIS OPTIONS / CARDS
+   ========================================================= */
+
+/* Two cards side-by-side on desktop */
+.analysis-options {
+    display: grid;
+
+    grid-template-columns: repeat(2, 1fr);
+    gap: 26px;
+
+    margin-bottom: 32px;
+}
+
+
+/* Individual analysis card */
+.analysis-card {
+    display: flex;
+    flex-direction: column;
+
+    padding: 28px;
+
+    background: #ffffff;
+
+    border-radius: 24px;
+    border: 1px solid #e0e9df;
+
+    box-shadow: 0 12px 35px rgba(31, 73, 40, 0.08);
+
+    transition: 0.25s;
+}
+
+
+/* Card hover effect */
+.analysis-card:hover {
+    transform: translateY(-5px);
+
+    box-shadow: 0 18px 40px rgba(31, 73, 40, 0.13);
+
+    border-color: #9bc5a3;
+}
+
+
+/* Large image area inside card */
+.card-image {
+    width: 100%;
+    height: 190px;
+    margin-bottom: 20px;
+
+    border-radius: 16px;
+    overflow: hidden;
+}
+
+.card-image img {
+    width: 100%;
+    height: 100%;
+
+    display: block;
+
+    object-fit: cover;
+}
+
+
+.product-image {
+    width: 100%;
+    height: 160px;
+
+    margin-bottom: 12px;
+
+    border-radius: 12px;
+    overflow: hidden;
+}
+
+.product-image img {
+    width: 100%;
+    height: 100%;
+
+    display: block;
+
+    object-fit: contain;
+}
+
+
+/* =========================================================
+   6. IMAGE PLACEHOLDERS
+   ========================================================= */
+
+/*
+   Used when you want to keep an empty space
+   for adding an image later.
+*/
+.small-image img {
+    width: 100%;
+    height: 100%;
+    display: block;
+    object-fit: contain;
+    border-radius: 11px;
+}
+.info-icon-placeholder img {
+    width: 100%;
+    height: 100%;
+    display: block;
+    object-fit: contain;
+    border-radius: 16px;
+}
+.image-placeholder {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    text-align: center;
+
+    background: linear-gradient(
+        135deg,
+        #edf6ee,
+        #dfeee1
+    );
+
+    
+    border-radius: 16px;
+
+    color: #477252;
+
+    font-size: 12px;
+    font-weight: 800;
+    letter-spacing: 0.4px;
+
+    overflow: hidden;
+}
+
+
+/* Prevent placeholder text from interfering with clicks */
+.image-placeholder span {
+    pointer-events: none;
+}
+
+
+/* Small image placeholder */
+.small-image {
+    width: 42px;
+    height: 42px;
+
+    border-radius: 11px;
+
+    flex: 0 0 42px;
+
+    font-size: 8px;
+}
+
+
+/* Logo image placeholder */
+.logo-mark {
+    border: 1px dashed #9db9a1;
+}
+
+
+/* Small icon placeholder inside cards */
+.card-icon-placeholder {
+    width: 48px;
+    height: 48px;
+
+    margin-bottom: 15px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 14px;
+
+    background: #e8f6ea;
+    color: #21733b;
+
+    font-weight: 900;
+    font-size: 15px;
+}
+
+
+/* =========================================================
+   7. ANALYSIS CARD CONTENT
+   ========================================================= */
+
+.analysis-card h2 {
+    font-size: 25px;
+
+    color: #174c27;
+
+    margin-bottom: 12px;
+}
+
+
+.analysis-card p {
+    color: #66736a;
+
+    line-height: 1.7;
+
+    margin-bottom: 18px;
+}
+
+
+/* Remove default bullet points */
+.analysis-card ul {
+    list-style: none;
+
+    margin-bottom: 25px;
+
+    /* Pushes button toward bottom of card */
+    flex: 1;
+}
+
+
+/* Individual feature item */
+.analysis-card li {
+    position: relative;
+
+    padding-left: 24px;
+    margin-bottom: 10px;
+
+    color: #405247;
+
+    font-size: 14px;
+    line-height: 1.5;
+}
+
+
+/* Green check mark before each list item */
+.analysis-card li::before {
+    content: "✓";
+
+    position: absolute;
+    left: 0;
+
+    color: #258443;
+
+    font-weight: 900;
+}
+
+
+/* =========================================================
+   8. COMMON GREEN BUTTONS
+   ========================================================= */
+
+.analysis-btn,
+.submit-btn,
+.analyze-upload-btn,
+.primary-small,
+.location-btn {
+    width: 100%;
+
+    padding: 13px 18px;
+
+    border: 0;
+    border-radius: 12px;
+
+    background: #21863e;
+    color: #ffffff;
+
+    font-size: 15px;
+    font-weight: 800;
+
+    cursor: pointer;
+
+    transition: 0.2s;
+}
+
+
+/* Button hover effect */
+.analysis-btn:hover,
+.submit-btn:hover,
+.analyze-upload-btn:hover,
+.primary-small:hover,
+.location-btn:hover {
+    background: #176b30;
+
+    transform: translateY(-1px);
+}
+
+
+/* =========================================================
+   9. INFORMATION BOX
+   ========================================================= */
+
+.info-box {
+    display: flex;
+    align-items: flex-start;
+
+    gap: 15px;
+
+    padding: 20px 23px;
+    margin-top: 10px;
+
+    background: #eef7ed;
+
+    border: 1px solid #d4e8d2;
+    border-radius: 18px;
+}
+
+
+/* Information icon placeholder */
+.info-icon-placeholder {
+    width: 64px;
+    height: 64px;
+
+    min-width: 64px;
+}
+
+
+/* Information heading */
+.info-box h3 {
+    color: #245b31;
+
+    margin: 4px 0 7px;
+}
+
+
+/* Information description */
+.info-box p {
+    color: #647268;
+
+    line-height: 1.65;
+
+    font-size: 14px;
+}
+
+
+/* =========================================================
+   10. MODAL / POPUP
+   ========================================================= */
+
+/* Full-screen dark background behind popup */
+.modal {
+    position: fixed;
+
+    inset: 0;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    padding: 20px;
+
+    background: rgba(10, 30, 15, 0.58);
+
+    z-index: 2000;
+
+    overflow: auto;
+}
+
+
+/* Completely hide an element */
+.hidden {
+    display: none !important;
+}
+
+
+/* Main popup box */
+.modal-content {
+    position: relative;
+
+    width: min(620px, 100%);
+    max-height: 92vh;
+
+    overflow: auto;
+
+    padding: 32px;
+
+    background: #ffffff;
+
+    border-radius: 22px;
+
+    box-shadow: 0 30px 80px rgba(0, 0, 0, 0.25);
+}
+
+
+/* Large popup */
+.wide-modal {
+    width: min(1050px, 100%);
+}
+
+
+/* Close X button */
+.close-btn {
+    position: absolute;
+
+    right: 17px;
+    top: 13px;
+
+    width: 38px;
+    height: 38px;
+
+    border: 0;
+    border-radius: 50%;
+
+    background: #edf5ed;
+    color: #245b31;
+
+    font-size: 25px;
+
+    cursor: pointer;
+}
+
+
+/* Popup heading */
+.modal-content h2 {
+    font-size: 30px;
+
+    color: #174c27;
+
+    margin-bottom: 9px;
+
+    padding-right: 40px;
+}
+
+
+/* Popup description */
+.modal-content > p {
+    color: #657168;
+
+    line-height: 1.65;
+
+    margin-bottom: 22px;
+}
+
+
+/* =========================================================
+   11. SOIL TESTING KIT GUIDE
+   ========================================================= */
+
+.kit-grid {
+    display: grid;
+
+    grid-template-columns: 1fr 1fr;
+
+    gap: 18px;
+}
+
+
+/* Guide panel */
+.guide-panel {
+    padding: 20px;
+
+    background: #f7fbf6;
+
+    border: 1px solid #e0ebe0;
+
+    border-radius: 17px;
+}
+
+
+/* Guide headings */
+.guide-panel h3,
+.section-heading {
+    color: #245b31;
+
+    margin-bottom: 14px;
+}
+
+
+/* =========================================================
+   12. SOIL PARAMETERS
+   ========================================================= */
+
+.parameter-grid {
+    display: grid;
+
+    grid-template-columns: 1fr 1fr;
+
+    gap: 10px;
+}
+
+
+/* Individual parameter box */
+.parameter-grid div {
+    display: flex;
+    flex-direction: column;
+
+    gap: 5px;
+
+    padding: 12px;
+
+    background: #ffffff;
+
+    border: 1px solid #e2e9e1;
+
+    border-radius: 12px;
+}
+
+
+/* Parameter value */
+.parameter-grid strong {
+    font-size: 18px;
+
+    color: #19713a;
+}
+
+
+/* Parameter description */
+.parameter-grid span {
+    font-size: 13px;
+
+    color: #66736a;
+
+    line-height: 1.45;
+}
+
+
+/* =========================================================
+   13. STEP-BY-STEP GUIDE
+   ========================================================= */
+
+.steps-list {
+    padding-left: 21px;
+}
+
+
+.steps-list li {
+    margin-bottom: 10px;
+
+    color: #405247;
+
+    line-height: 1.55;
+
+    font-size: 14px;
+}
+
+
+/* Section heading with extra top spacing */
+.section-heading {
+    margin-top: 25px;
+}
+
+
+/* =========================================================
+   14. PRODUCT / SOIL TEST KIT CARDS
+   ========================================================= */
+
+.product-grid {
+    display: grid;
+
+    grid-template-columns: repeat(3, 1fr);
+
+    gap: 15px;
+}
+
+
+/* Product card */
+.product-card {
+    padding: 15px;
+
+    background: #ffffff;
+
+    border: 1px solid #e0e9df;
+
+    border-radius: 17px;
+}
+
+
+/* Product image */
+.product-image {
+    height: 140px;
+
+    margin-bottom: 12px;
+}
+
+
+/* Product name */
+.product-card h4 {
+    font-size: 18px;
+
+    color: #174c27;
+
+    margin-bottom: 7px;
+}
+
+
+/* Product description */
+.product-card p {
+    min-height: 60px;
+
+    font-size: 13px;
+
+    line-height: 1.5;
+
+    color: #66736a;
+}
+
+
+/* Product price */
+.product-card strong {
+    display: block;
+
+    font-size: 20px;
+
+    color: #19713a;
+
+    margin: 9px 0;
+}
+
+
+/* =========================================================
+   15. SECONDARY BUTTON
+   ========================================================= */
+
+.secondary-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+
+    padding: 10px 13px;
+
+    text-decoration: none;
+
+    border-radius: 10px;
+
+    background: #edf6ee;
+    color: #176b35;
+
+    font-weight: 800;
+    font-size: 13px;
+
+    border: 1px solid #d4e8d2;
+}
+
+
+/* Secondary button hover */
+.secondary-btn:hover {
+    background: #dceedd;
+}
+
+
+/* =========================================================
+   16. BUY / PURCHASE BOX
+   ========================================================= */
+
+.buy-box {
+    margin-top: 18px;
+
+    padding: 19px;
+
+    border-radius: 17px;
+
+    background: #f0f7ef;
+
+    border: 1px solid #dcebd9;
+}
+
+
+.buy-box h3 {
+    color: #245b31;
+
+    margin-bottom: 8px;
+}
+
+
+.buy-box p {
+    font-size: 14px;
+
+    line-height: 1.6;
+
+    color: #5e6d63;
+}
+
+
+/* Purchase links */
+.buy-links {
+    display: flex;
+
+    gap: 10px;
+
+    flex-wrap: wrap;
+
+    margin: 13px 0;
+}
+
+
+.buy-box small {
+    color: #718078;
+}
+
+
+/* =========================================================
+   17. NOTES / WARNINGS
+   ========================================================= */
+
+.language-note,
+.lab-note {
+    margin-top: 15px;
+
+    padding: 12px 14px;
+
+    border-radius: 12px;
+
+    background: #fff8e6;
+
+    border: 1px solid #f1dfaa;
+
+    color: #765f24;
+
+    font-size: 12px;
+
+    line-height: 1.5;
+}
+
+
+/* =========================================================
+   18. IMAGE UPLOAD AREA
+   ========================================================= */
+
+.upload-area {
+    padding: 20px;
+
+    border: 2px dashed #b4c9b7;
+
+    border-radius: 17px;
+
+    text-align: center;
+
+    background: #f7fbf6;
+
+    margin-bottom: 18px;
+}
+
+
+/* Uploaded image preview */
+.upload-image {
+    width: 180px;
+    height: 120px;
+
+    margin: 0 auto 15px;
+}
+
+
+/* Upload button / label */
+.upload-label {
+    display: inline-block;
+
+    padding: 11px 16px;
+
+    border-radius: 10px;
+
+    background: #e8f6ea;
+
+    color: #176b35;
+
+    font-weight: 800;
+
+    cursor: pointer;
+}
+
+
+/* File input */
+.upload-area input {
+    display: block;
+
+    margin: 12px auto 0;
+
+    max-width: 100%;
+}
+
+
+/* Selected file name */
+.file-name {
+    font-size: 13px;
+
+    color: #617067;
+
+    margin-top: 9px;
+}
+
+
+/* Small text note */
+.small-note {
+    font-size: 12px !important;
+}
+
+
+/* =========================================================
+   19. MANUAL SOIL INPUT FORM
+   ========================================================= */
+
+.manual-modal-content form {
+    display: grid;
+
+    gap: 9px;
+}
+
+
+/* Form labels */
+.manual-modal-content label {
+    font-size: 13px;
+
+    font-weight: 800;
+
+    color: #31533a;
+}
+
+
+/* Form inputs and dropdowns */
+.manual-modal-content input,
+.manual-modal-content select,
+.lab-controls select {
+    width: 100%;
+
+    padding: 12px;
+
+    border: 1px solid #ccdccc;
+
+    border-radius: 10px;
+
+    background: #ffffff;
+
+    outline: none;
+
+    color: #183b1f;
+}
+
+
+/* Input focus effect */
+.manual-modal-content input:focus,
+.manual-modal-content select:focus,
+.lab-controls select:focus {
+    border-color: #2e8b57;
+}
+
+
+/* =========================================================
+   20. SOIL TESTING LAB CONTROLS
+   ========================================================= */
+
+.lab-controls {
+    display: grid;
+
+    grid-template-columns: 1fr 1fr 1fr;
+
+    gap: 13px;
+
+    align-items: end;
+}
+
+
+/* Lab control labels */
+.lab-controls label {
+    display: block;
+
+    font-size: 13px;
+
+    font-weight: 800;
+
+    color: #31533a;
+
+    margin-bottom: 7px;
+}
+
+
+/* Location control */
+.location-control {
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 7px;
+}
+
+
+/* Location status text */
+.location-status {
+    font-size: 11px;
+
+    color: #647268;
+
+    min-height: 14px;
+}
+
+
+/* Location button */
+.location-btn {
+    background: #326b43;
+}
+
+
+/* =========================================================
+   21. LAB ACTION BUTTONS
+   ========================================================= */
+
+.lab-actions {
+    display: flex;
+
+    gap: 10px;
+
+    flex-wrap: wrap;
+
+    margin: 15px 0;
+}
+
+
+/* Small buttons don't need full width */
+.primary-small,
+.lab-actions .secondary-btn {
+    width: auto;
+}
+
+
+/* =========================================================
+   22. LAB RESULTS
+   ========================================================= */
+
+.lab-results {
+    margin-top: 16px;
+
+    display: grid;
+
+    gap: 12px;
+}
+
+
+/* Individual lab result card */
+.lab-card {
+    padding: 17px;
+
+    border: 1px solid #dfe9df;
+
+    border-radius: 16px;
+
+    background: #fbfdfb;
+}
+
+
+/* Lab card header */
+.lab-card-header {
+    display: flex;
+
+    justify-content: space-between;
+
+    gap: 12px;
+
+    align-items: flex-start;
+}
+
+
+/* Lab name */
+.lab-card h3 {
+    font-size: 18px;
+
+    color: #174c27;
+
+    margin-bottom: 5px;
+}
+
+
+/* Government / Private / Other label */
+.lab-type {
+    display: inline-block;
+
+    padding: 5px 8px;
+
+    border-radius: 20px;
+
+    background: #e6f4e8;
+
+    color: #1d6c36;
+
+    font-size: 11px;
+
+    font-weight: 800;
+}
+
+
+/* Lab address/details */
+.lab-meta {
+    font-size: 13px;
+
+    color: #5e6d63;
+
+    line-height: 1.55;
+
+    margin: 8px 0;
+}
+
+
+/* Buttons/links inside lab card */
+.lab-actions-row {
+    display: flex;
+
+    gap: 8px;
+
+    flex-wrap: wrap;
+}
+
+
+.lab-actions-row a {
+    font-size: 12px;
+}
+
+
+/* Distance text */
+.distance {
+    font-weight: 900;
+
+    color: #19713a;
+}
+
+
+/* =========================================================
+   23. LOADING STATE
+   ========================================================= */
+
+.loading {
+    text-align: center;
+
+    padding: 25px;
+
+    color: #5f6d64;
+}
+
+
+/* Loading spinner */
+.loading-spinner {
+    width: 35px;
+    height: 35px;
+
+    border: 4px solid #dce9dc;
+
+    border-top-color: #21863e;
+
+    border-radius: 50%;
+
+    margin: 0 auto 12px;
+
+    animation: spin 1s linear infinite;
+}
+
+
+/* Spinner rotation animation */
+@keyframes spin {
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+
+/* =========================================================
+   24. SOIL ANALYSIS RESULT SECTION
+   ========================================================= */
+
+.soil-result {
+    width: 90%;
+    max-width: 1050px;
+
+    margin: 0 auto 60px;
+}
+
+
+/* Main result card */
+.result-card {
+    padding: 30px;
+
+    background: #ffffff;
+
+    border-radius: 22px;
+
+    border: 1px solid #e0e9df;
+
+    box-shadow: 0 12px 35px rgba(31, 73, 40, 0.08);
+}
+
+
+/* Result heading */
+.result-card > h2 {
+    font-size: 28px;
+
+    color: #174c27;
+
+    margin-bottom: 18px;
+}
+
+
+/* Individual result item */
+.result-item {
+    padding: 17px;
+
+    margin-bottom: 12px;
+
+    background: #fbfdfb;
+
+    border: 1px solid #e1e9e1;
+
+    border-radius: 15px;
+}
+
+
+/* Result item heading */
+.result-item h3 {
+    font-size: 17px;
+
+    color: #245b31;
+
+    margin-bottom: 7px;
+}
+
+
+/* Result item text */
+.result-item p {
+    white-space: pre-line;
+
+    color: #526159;
+
+    line-height: 1.7;
+}
+
+
+/* Error message */
+.error-message {
+    padding: 16px;
+
+    border-radius: 12px;
+
+    background: #fff0f0;
+
+    color: #a03333;
+}
+
+
+/* Loading heading */
+.loading h3 {
+    color: #245b31;
+
+    margin-bottom: 6px;
+}
+
+
+/* Loading description */
+.loading p {
+    color: #68756d;
+}
+
+
+/* =========================================================
+   25. TABLET RESPONSIVE DESIGN
+   ---------------------------------------------------------
+   Applies when screen width is 900px or smaller.
+   ========================================================= */
+
+@media (max-width: 900px) {
+
+    /* Analysis cards remain two columns */
+    .analysis-options {
+        grid-template-columns: 1fr 1fr;
+    }
+
+    /* Product cards become two columns */
+    .product-grid {
+        grid-template-columns: 1fr 1fr;
+    }
+
+    /* Lab controls become two columns */
+    .lab-controls {
+        grid-template-columns: 1fr 1fr;
+    }
+
+    /* Location control takes complete row */
+    .location-control {
+        grid-column: 1 / -1;
+    }
+}
+
+
+/* =========================================================
+   26. MOBILE RESPONSIVE DESIGN
+   ---------------------------------------------------------
+   Applies when screen width is 650px or smaller.
+   ========================================================= */
+
+@media (max-width: 650px) {
+
+    /* Smaller header spacing */
+    .header {
+        padding: 13px 5%;
+    }
+
+
+    /* Smaller logo */
+    .logo {
+        font-size: 17px;
+    }
+
+
+    /* Main container */
+    .soil-container {
+        width: 92%;
+
+        padding: 42px 0;
+    }
+
+
+    /* Convert all major grids to one column */
+    .analysis-options,
+    .kit-grid,
+    .product-grid,
+    .lab-controls {
+        grid-template-columns: 1fr;
+    }
+
+
+    /* Smaller analysis cards */
+    .analysis-card {
+        padding: 21px;
+    }
+
+
+    /* Smaller card image */
+    .card-image {
+        height: 165px;
+    }
+
+
+    /* Smaller modal spacing */
+    .modal {
+        padding: 10px;
+    }
+
+
+    .modal-content {
+        padding: 23px 18px;
+
+        border-radius: 18px;
+    }
+
+
+    /* Parameters become one column */
+    .parameter-grid {
+        grid-template-columns: 1fr;
+    }
+
+
+    /* Lab header becomes vertical */
+    .lab-card-header {
+        flex-direction: column;
+    }
+
+
+    /* Purchase buttons take full width */
+    .buy-links .secondary-btn {
+        width: 100%;
+    }
+}

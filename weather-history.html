@@ -1,0 +1,9 @@
+<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0"><title>Weather History | Smart Crop Advisor</title><link rel="stylesheet" href="services.css"></head>
+<body><header class="topbar"><div class="brand">Smart Crop Advisor</div><nav><a href="index.html">Home</a><a href="current-weather.html">Current Weather</a><a href="action-plan.html">Action Plan</a></nav></header>
+<section class="hero"><span class="badge">LONG-TERM WEATHER INTELLIGENCE</span><h1>3+ Year Farm Weather History</h1><p>Explore historical temperature and rainfall patterns for a location. The data is observational/reanalysis-based and should be treated as context, not a yield guarantee.</p></section>
+<main class="container"><div class="toolbar"><div class="form-grid">
+<div class="form-group"><label>Latitude</label><input id="lat" type="number" step="any" placeholder="e.g. 28.67"></div>
+<div class="form-group"><label>Longitude</label><input id="lon" type="number" step="any" placeholder="e.g. 77.43"></div>
+<div class="form-group"><label>Years to compare</label><select id="years"><option value="3">3</option><option value="4">4</option><option value="5">5</option></select></div>
+</div><div class="actions"><button id="locate">Use my location</button><button id="analyze">Analyze history</button></div><div id="status" class="status"></div></div>
+<div id="summary" class="grid"></div><div class="card" style="margin-top:20px"><h3>Monthly comparison</h3><div style="overflow:auto"><table><thead><tr><th>Month</th><th>Avg temp °C</th><th>Rainfall mm</th><th>Rainy days</th></tr></thead><tbody id="tableBody"></tbody></table></div></div></main><footer>Data source: Open-Meteo historical weather API. Smart Crop Advisor does not guarantee crop outcomes from weather history alone.</footer><script src="weather-history.js"></script></body></html>

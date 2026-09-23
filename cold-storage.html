@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Cold Storage & Warehouses | Smart Crop Advisory</title>
+<link rel="stylesheet" href="cold-storage.css">
+</head>
+<body>
+<header class="topbar">
+  <a class="brand" href="index.html"><div class="logo-placeholder">
+        <img src="images/logo.jpg" alt="Smart Crop Advisor Logo">
+        </div> Smart Crop Advisory</a>
+  <select id="language" aria-label="Language"><option value="en">English</option><option value="hi">हिन्दी</option><option value="bho">भोजपुरी</option></select>
+</header>
+<main class="wrap">
+  <section class="hero">
+    <span class="eyebrow" data-i18n="eyebrow">FARMER STORAGE SUPPORT</span>
+    <h1 data-i18n="title">Find Cold Storage & Warehouses</h1>
+    <p data-i18n="subtitle">Explore storage options for your harvest, compare facilities, and contact providers.</p>
+  </section>
+  <section class="search panel">
+    <h2 data-i18n="searchTitle">Search by location and crop</h2>
+    <div class="fields">
+      <label><span data-i18n="state">State</span><select id="state"><option value="">Select state</option></select></label>
+      <label><span data-i18n="district">District</span><input id="district" data-i18n-placeholder="districtPlaceholder" placeholder="Enter district"></label>
+      <label><span data-i18n="crop">Crop / commodity</span><select id="crop"><option value="all">All crops</option><option>Potato</option><option>Onion</option><option>Wheat</option><option>Rice</option><option>Apple</option><option>Vegetables</option><option>Other</option></select></label>
+      <label><span data-i18n="facility">Facility type</span><select id="type"><option value="all">All facilities</option><option value="cold">Cold storage</option><option value="warehouse">Warehouse</option></select></label>
+    </div>
+    <div class="actions"><button id="searchBtn" class="primary" data-i18n="search">Search facilities</button><button id="resetBtn" class="secondary" data-i18n="reset">Reset</button></div>
+    <p class="notice" data-i18n="notice">Demo directory: listings below are sample records, not verified live availability or current prices. Call the facility to confirm.</p>
+  </section>
+  <section class="results-head"><h2 data-i18n="results">Storage facilities</h2><span id="count" aria-live="polite"></span></section>
+  <div id="cards" class="cards"></div>
+  <section class="guide panel">
+    <h2 data-i18n="guideTitle">Before storing your crop</h2>
+    <ul><li data-i18n="tip1">Ask about storage temperature, humidity, and crop suitability.</li><li data-i18n="tip2">Confirm rent, minimum quantity, duration, loading/unloading, and insurance.</li><li data-i18n="tip3">Get a receipt and written terms; inspect the facility before paying.</li></ul>
+  </section>
+</main>
+<footer data-i18n="footer">Smart Crop Advisory • Powered by: Black Terminal</footer>
+<script src="cold-storage.js"></script>
+</body></html>

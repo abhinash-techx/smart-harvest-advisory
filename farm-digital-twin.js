@@ -1,0 +1,9 @@
+const KEY='smartCropFarmTwinV1';
+const ids=['farmerName','farmArea','soilType','soilPH','currentCrop','sowingDate','soilDate','temperature','cropStage','moisture','water','location'];
+const defaults={farmerName:'',farmArea:'',soilType:'',soilPH:'',currentCrop:'',sowingDate:'',soilDate:'',temperature:'',cropStage:'',moisture:'',water:'Good',location:''};
+const $=id=>document.getElementById(id);
+function load(){let d={...defaults,...JSON.parse(localStorage.getItem(KEY)||'{}')};ids.forEach(id=>$(id).value=d[id]??'');render(d);}
+function render(d){const items=[['Farmer',d.farmerName||'Not set'],['Farm',d.farmArea?d.farmArea+' acres':'Not set'],['Soil',d.soilType||'Not set'],['pH',d.soilPH||'Not set'],['Current Crop',d.currentCrop||'Not set'],['Sowing',d.sowingDate||'Not set'],['Last Soil Analysis',d.soilDate||'Not set'],['Temperature',d.temperature?d.temperature+' °C':'Not set'],['Crop Stage',d.cropStage||'Not set'],['Soil Moisture',d.moisture?d.moisture+' %':'Not set'],['Water',d.water||'Not set'],['Location',d.location||'Not set']];$('snapshot').innerHTML=items.map(x=>`<div class="snap"><small>${x[0]}</small><strong>${x[1]}</strong></div>`).join('');let ts=localStorage.getItem(KEY+'_updated');$('updatedAt').textContent=ts?'Updated '+new Date(ts).toLocaleString():'Not saved yet';}
+$('farmForm').addEventListener('submit',e=>{e.preventDefault();let d={};ids.forEach(id=>d[id]=$(id).value.trim());d.updatedAt=new Date().toISOString();localStorage.setItem(KEY,JSON.stringify(d));localStorage.setItem(KEY+'_updated',d.updatedAt);$('saveMsg').textContent='Digital Twin updated successfully.';render(d);});
+$('resetFarm').addEventListener('click',()=>{localStorage.removeItem(KEY);localStorage.removeItem(KEY+'_updated');$('farmForm').reset();render(defaults);$('saveMsg').textContent='Profile cleared.';});
+load();

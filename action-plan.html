@@ -1,0 +1,10 @@
+<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0"><title>Farmer Action Plan | Smart Crop Advisor</title><link rel="stylesheet" href="services.css"></head>
+<body><header class="topbar"><div class="brand">Smart Crop Advisor</div><nav><a href="index.html">Home</a><a href="getstarted.html">Crop Recommendation</a><a href="current-weather.html">Weather</a></nav></header>
+<section class="hero"><span class="badge">FARMER ACTION PLAN</span><h1>Turn data into next steps</h1><p>Generate a practical checklist from your crop, soil, water and season. This is a planning aid, not a replacement for local agronomy advice.</p></section>
+<main class="container"><div class="toolbar"><div class="form-grid">
+<div class="form-group"><label>Crop</label><select id="crop"><option>Rice</option><option>Wheat</option><option>Maize</option><option>Gram</option><option>Cotton</option><option>Vegetable crop</option></select></div>
+<div class="form-group"><label>Soil type</label><select id="soil"><option>Loamy</option><option>Clayey</option><option>Sandy Loam</option><option>Black Soil</option><option>Alluvial</option></select></div>
+<div class="form-group"><label>Water availability</label><select id="water"><option>Low</option><option>Medium</option><option>High</option><option>Rainwater Dependent</option></select></div>
+<div class="form-group"><label>Season</label><select id="season"><option>Kharif</option><option>Rabi</option><option>Zaid</option></select></div>
+</div><div class="actions"><button id="generate">Generate plan</button><button class="btn secondary" id="print">Print / Save PDF</button></div></div>
+<div id="plan" class="grid"></div></main><footer>Smart Crop Advisor • Farmer planning assistant</footer><script src="action-plan.js"></script></body></html>

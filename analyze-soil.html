@@ -1,0 +1,386 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Analyze My Soil | Smart Crop Advisor</title>
+    <link rel="stylesheet" href="analyze-soil.css">
+</head>
+<body>
+
+<header class="header">
+
+        <div class="logo">
+        <span class="logo-mark small-image">
+            <img
+                src="images/logo.jpg"
+                alt="Smart Crop Advisor Logo"
+            >
+        </span>
+
+        <span>Smart Crop Advisor</span>
+    </div>
+
+
+    <select id="languageSelect" class="language-select" aria-label="Language">
+        <option value="en">English</option>
+        <option value="hi">हिंदी</option>
+        <option value="bho">भोजपुरी</option>
+    </select>
+</header>
+
+<main class="soil-container">
+
+    <section class="hero-section">
+        <span class="badge" data-i18n="badge">Smart Soil Analysis</span>
+        <h1 data-i18n="title">Analyze Your Soil</h1>
+        <p data-i18n="subtitle">Choose a soil service and get practical information for your farm.</p>
+    </section>
+
+    <section class="analysis-options">
+
+        <article class="analysis-card">
+            
+            <div class="card-image">
+                <img 
+                src="images/soil-test-kit.webp"
+                alt="Soil Testing Kit">
+            </div>
+            <div class="card-icon-placeholder" aria-hidden="true">01</div>
+            <h2 data-i18n="kitTitle">Soil Testing Kit</h2>
+            <p data-i18n="kitDescription">Learn what a soil testing kit does, how to use it, where to buy it online or offline, and indicative prices.</p>
+            <ul>
+                <li data-i18n="kitPoint1">pH, N, P & K testing basics</li>
+                <li data-i18n="kitPoint2">Step-by-step usage guide</li>
+                <li data-i18n="kitPoint3">Online & offline buying guidance</li>
+            </ul>
+            <button class="analysis-btn" id="kitBtn" type="button" data-i18n="kitButton">Explore Soil Testing Kit</button>
+        </article>
+
+        <article class="analysis-card">
+            <div class="card-image">
+                <img 
+                src="images/soil-analyze.jpg"
+                alt="Soil Testing Kit">
+            </div>
+            <div class="card-icon-placeholder" aria-hidden="true">02</div>
+            <h2 data-i18n="imageTitle">By Photo — Soil Analysis</h2>
+            <p data-i18n="imageDescription">Upload a clear soil photo and let AI provide a visual, preliminary assessment.</p>
+            <ul>
+                <li data-i18n="imagePoint1">AI visual soil assessment</li>
+                <li data-i18n="imagePoint2">Visible soil & moisture observations</li>
+                <li data-i18n="imagePoint3">Potential crop suggestions</li>
+            </ul>
+            <button class="analysis-btn" id="imageAnalysisBtn" type="button" data-i18n="imageButton">Analyze Soil Photo</button>
+        </article>
+
+        <article class="analysis-card">
+            <div class="card-image">
+                <img 
+                src="images/soil-lab.jpeg"
+                alt="Soil Testing Kit">
+            </div>
+            <div class="card-icon-placeholder" aria-hidden="true">03</div>
+            <h2 data-i18n="labTitle">Find Soil Testing Labs</h2>
+            <p data-i18n="labDescription">Find registered soil testing centres by state and district, or use your location to sort nearby results by distance.</p>
+            <ul>
+                <li data-i18n="labPoint1">28 Indian states + district selection</li>
+                <li data-i18n="labPoint2">Government / ICAR-KVK / registered private categories</li>
+                <li data-i18n="labPoint3">Distance, address & map directions when available</li>
+            </ul>
+            <button class="analysis-btn" id="labBtn" type="button" data-i18n="labButton">Find Nearby Soil Labs</button>
+        </article>
+
+        <article class="analysis-card manual-card">
+            <div class="card-image">
+                <img 
+                src="images/soil-test-manual.jpg"
+                alt="Soil Testing Kit">
+            </div>
+            <div class="card-icon-placeholder" aria-hidden="true">04</div>
+            <h2 data-i18n="manualTitle">Manual Soil Analysis</h2>
+            <p data-i18n="manualDescription">Enter values from your soil test report for an AI-assisted interpretation.</p>
+            <ul>
+                <li data-i18n="manualPoint1">pH level</li>
+                <li data-i18n="manualPoint2">Nitrogen, Phosphorus & Potassium</li>
+                <li data-i18n="manualPoint3">Moisture & soil type</li>
+            </ul>
+            <button class="analysis-btn" id="manualAnalysisBtn" type="button" data-i18n="manualButton">Enter Soil Details</button>
+        </article>
+
+    </section>
+
+    <section class="info-box">
+        <div class="info-icon-placeholder" aria-label="Important note image">
+            <img src="images/logo.jpg" alt="Important Note">
+        </div>
+        <div>
+            <h3 data-i18n="infoTitle">Important Note</h3>
+            <p data-i18n="infoText">A soil photo gives a visual AI assessment only. Exact pH and nutrient values should come from a proper soil test.</p>
+        </div>
+    </section>
+
+</main>
+
+<!-- KIT MODAL -->
+<div class="modal hidden" id="kitModal">
+    <div class="modal-content wide-modal">
+        <button class="close-btn" data-close="kitModal" aria-label="Close">×</button>
+        <h2 data-i18n="kitModalTitle">Soil Testing Kit Guide</h2>
+        <p data-i18n="kitModalIntro">Use a kit as a quick field check. For important fertilizer decisions, confirm results with a reliable laboratory.</p>
+
+        <div class="kit-grid">
+            <section class="guide-panel">
+                <h3 data-i18n="whatKit">What does a kit test?</h3>
+                <div class="parameter-grid">
+                    <div><strong>pH</strong><span data-i18n="phMeaning">Acidic / neutral / alkaline condition</span></div>
+                    <div><strong>N</strong><span data-i18n="nMeaning">Nitrogen — plant growth and leaf development</span></div>
+                    <div><strong>P</strong><span data-i18n="pMeaning">Phosphorus — roots, flowering and energy transfer</span></div>
+                    <div><strong>K</strong><span data-i18n="kMeaning">Potassium — plant strength and stress tolerance</span></div>
+                </div>
+            </section>
+
+            <section class="guide-panel">
+                <h3 data-i18n="howToUse">How to use a basic chemical kit</h3>
+                <ol class="steps-list">
+                    <li data-i18n="step1">Collect a representative soil sample from several spots and mix it well.</li>
+                    <li data-i18n="step2">Follow the kit manual for the exact soil quantity, water/reagent ratio and extraction time.</li>
+                    <li data-i18n="step3">Add the specified reagent and compare the colour/readout exactly as the manufacturer instructs.</li>
+                    <li data-i18n="step4">Record pH/NPK values and keep the test date with the result.</li>
+                    <li data-i18n="step5">If the result is unusual or a major fertilizer decision depends on it, verify with a laboratory.</li>
+                </ol>
+            </section>
+        </div>
+
+        <h3 class="section-heading" data-i18n="kitOptions">Current kit examples & indicative prices</h3>
+        <div class="product-grid">
+
+
+        <article class="product-card">
+
+         <!-- Product Image -->
+            <div class="product-image">
+                <img
+                    src="images/soil-test1.jpg"
+                    alt="Hanna HI3895 Soil Testing Kit"
+                >
+            </div>
+
+            <!-- Product Name -->
+            <h4>Hanna HI3895</h4>
+
+            <!-- Product Description -->
+            <p data-i18n="hi3895Desc">
+                pH + NPK, 10 tests each. Manufacturer-listed price
+                checked for this build.
+            </p>
+
+            <!-- Price -->
+            <strong>₹3,695</strong>
+
+            <!-- Product Website -->
+            <a
+                class="secondary-btn"
+                href="https://hannainst.in/product/npk-soil-chemical-test-kit-10-tests-each-hi3895/"
+                target="_blank"
+                rel="noopener"
+                data-i18n="viewProduct"
+            >
+            View product
+            </a>
+
+        </article>
+
+
+            <article class="product-card">
+
+         <!-- Product Image -->
+            <div class="product-image">
+                <img
+                    src="images/soil-test2.jpg"
+                    alt="Hanna HI3895 Soil Testing Kit"
+                >
+            </div>
+
+            <!-- Product Name -->
+            <h4>NPK Soil Chemical Test Kit (25 tests each) - HI3896</h4>
+
+            <!-- Product Description -->
+            <p data-i18n="hi3895Desc">
+                pH + NPK, 10 tests each. Manufacturer-listed price
+                checked for this build.
+            </p>
+
+            <!-- Price -->
+            <strong>₹8,680</strong>
+
+            <!-- Product Website -->
+            <a
+                class="secondary-btn"
+                href="https://hannainst.in/product/npk-soil-chemical-test-kit-25-tests-each-hi3896/"
+                target="_blank"
+                rel="noopener"
+                data-i18n="viewProduct"
+            >
+            View product
+            </a>
+
+        </article>
+            <article class="product-card">
+
+         <!-- Product Image -->
+            <div class="product-image">
+                <img
+                    src="images/soil-test3.jpg"
+                    alt="Hanna HI3895 Soil Testing Kit"
+                >
+            </div>
+
+            <!-- Product Name -->
+            <h4>Soilometer Advance Kit</h4>
+
+            <!-- Product Description -->
+            <p data-i18n="hi3895Desc">
+                pH + NPK, 10 tests each. Manufacturer-listed price
+                checked for this build.
+            </p>
+
+            <!-- Price -->
+            <strong>₹4,400</strong>
+
+            <!-- Product Website -->
+            <a
+                class="secondary-btn"
+                href="https://biometechnologies.in/products/42/"
+                target="_blank"
+                rel="noopener"
+                data-i18n="viewProduct"
+            >
+            View product
+            </a>
+
+        </article>
+        </div>
+
+        <div class="buy-box">
+            <h3 data-i18n="buyOnline">Where can I buy?</h3>
+            <p data-i18n="buyOnlineText">For online buying, prefer the manufacturer's website or a well-known marketplace. Check seller, reviews, warranty, test parameters and delivery before ordering.</p>
+            <div class="buy-links">
+                <a class="secondary-btn" href="https://www.google.com/search?q=soil+testing+kit+NPK+pH+India" target="_blank" rel="noopener" data-i18n="searchOnline">Search online options</a>
+                <a class="secondary-btn" href="https://www.google.com/maps/search/soil+testing+kit+agriculture+near+me" target="_blank" rel="noopener" data-i18n="findOffline">Find offline sellers</a>
+            </div>
+            <small data-i18n="priceNote">*Prices are indicative and can change. Verify the seller's current price before purchase.</small>
+        </div>
+
+        <div class="language-note" data-i18n="kitSafety">Always follow the exact manufacturer's instructions for reagents. Do not taste, inhale or misuse chemicals supplied with a kit.</div>
+    </div>
+</div>
+
+<!-- IMAGE MODAL -->
+<div class="modal hidden" id="imageModal">
+    <div class="modal-content">
+        <button class="close-btn" data-close="imageModal" aria-label="Close">×</button>
+        <h2 data-i18n="uploadTitle">Upload Soil Image</h2>
+        <p data-i18n="uploadDescription">Upload a clear photo of the soil.</p>
+        <div class="upload-area">
+            <div class="image-placeholder upload-image" data-image="UPLOAD PREVIEW IMAGE — 180 × 120 px"><span>180 × 120 px</span></div>
+            <label for="soilImage" class="upload-label" data-i18n="chooseImage">Choose Soil Image</label>
+            <input type="file" id="soilImage" accept="image/*" capture="environment">
+            <p id="fileName" class="file-name"></p>
+        </div>
+        <button class="analyze-upload-btn" id="analyzeImageBtn" type="button" data-i18n="analyzeImage">Analyze Image</button>
+        <p class="small-note" data-i18n="imageNote">Use a clear, well-lit soil photo. A photo cannot replace laboratory pH/NPK testing.</p>
+    </div>
+</div>
+
+<!-- MANUAL MODAL -->
+<div class="modal hidden" id="manualModal">
+    <div class="modal-content manual-modal-content">
+        <button class="close-btn" data-close="manualModal" aria-label="Close">×</button>
+        <h2 data-i18n="manualFormTitle">Enter Soil Details</h2>
+        <p data-i18n="manualFormDescription">Enter values from your soil test report.</p>
+
+        <form id="soilForm">
+            <label for="soilType" data-i18n="soilType">Soil Type</label>
+            <select id="soilType" required>
+                <option value="" data-i18n="selectSoil">Select Soil Type</option>
+                <option value="alluvial" data-i18n="alluvial">Alluvial</option>
+                <option value="black" data-i18n="black">Black Soil</option>
+                <option value="red" data-i18n="red">Red Soil</option>
+                <option value="sandy" data-i18n="sandy">Sandy Soil</option>
+                <option value="loamy" data-i18n="loamy">Loamy Soil</option>
+                <option value="clay" data-i18n="clay">Clay Soil</option>
+            </select>
+
+            <label for="ph" data-i18n="ph">Soil pH</label>
+            <input type="number" id="ph" min="0" max="14" step="0.1" placeholder="e.g. 6.5" required>
+
+            <label for="nitrogen" data-i18n="nitrogen">Nitrogen (N)</label>
+            <input type="number" id="nitrogen" min="0" step="0.1" placeholder="mg/kg" required>
+
+            <label for="phosphorus" data-i18n="phosphorus">Phosphorus (P)</label>
+            <input type="number" id="phosphorus" min="0" step="0.1" placeholder="mg/kg" required>
+
+            <label for="potassium" data-i18n="potassium">Potassium (K)</label>
+            <input type="number" id="potassium" min="0" step="0.1" placeholder="mg/kg" required>
+
+            <label for="moisture" data-i18n="moisture">Soil Moisture</label>
+            <input type="number" id="moisture" min="0" max="100" step="0.1" placeholder="%" required>
+
+            <label for="location" data-i18n="location">Location</label>
+            <input type="text" id="location" placeholder="Village / District / State">
+
+            <button type="submit" class="submit-btn" data-i18n="analyzeSoil">Analyze My Soil</button>
+        </form>
+    </div>
+</div>
+
+<!-- LAB MODAL -->
+<div class="modal hidden" id="labModal">
+    <div class="modal-content wide-modal lab-modal">
+        <button class="close-btn" data-close="labModal" aria-label="Close">×</button>
+        <h2 data-i18n="labModalTitle">Find Soil Testing Laboratories</h2>
+        <p data-i18n="labModalIntro">Choose a state and district, or allow location to sort nearby registered centres by distance.</p>
+
+        <div class="lab-controls">
+            <div>
+                <label for="stateSelect" data-i18n="stateLabel">State</label>
+                <select id="stateSelect">
+                    <option value="" data-i18n="selectState">Select State</option>
+                </select>
+            </div>
+            <div>
+                <label for="districtSelect" data-i18n="districtLabel">District</label>
+                <select id="districtSelect" disabled>
+                    <option value="" data-i18n="selectDistrict">Select District</option>
+                </select>
+            </div>
+            <div class="location-control">
+                <button class="location-btn" id="useLocationBtn" type="button" data-i18n="useLocation">Use My Location</button>
+                <span id="locationStatus" class="location-status"></span>
+            </div>
+        </div>
+
+        <div class="lab-actions">
+            <button class="primary-small" id="findLabsBtn" type="button" data-i18n="findLabs">Find Registered Labs</button>
+            <a class="secondary-btn" href="https://soilhealth.dac.gov.in/soil-lab" target="_blank" rel="noopener" data-i18n="officialDirectory">Open Official Soil Lab Directory</a>
+        </div>
+
+        <div class="lab-note" data-i18n="labTrustNote">Lab records are intended to come from the Government of India's Soil Health Card ecosystem. Private results are shown only when returned by the registered-lab source.</div>
+
+        <div id="labLoading" class="loading hidden"></div>
+        <div id="labResults" class="lab-results"></div>
+    </div>
+</div>
+
+<section id="soilResult" class="soil-result hidden">
+    <div class="result-card">
+        <h2 data-i18n="resultTitle">Soil Analysis Result</h2>
+        <div id="resultContent"></div>
+    </div>
+</section>
+
+<script src="india-locations.js"></script>
+<script src="analyze-soil.js"></script>
+</body>
+</html>

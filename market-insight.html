@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Market Insight | Smart Crop Advisor</title>
+
+    <link rel="stylesheet" href="market-insight.css">
+</head>
+
+<body>
+
+    <header class="topbar">
+        <div class="brand">
+             <div class="logo-placeholder">
+        <img src="images/logo.jpg" alt="Smart Crop Advisor Logo">
+        </div>
+
+            <div>
+                <h1>Smart Crop Advisor</h1>
+                <p>Market Insight</p>
+            </div>
+        </div>
+
+        <a href="index.html" class="back-btn">← Back</a>
+    </header>
+
+
+    <main class="container">
+
+        <section class="hero">
+            <div class="hero-content">
+                <span class="badge">🇮🇳 LIVE MANDI DATA</span>
+
+                <h2>Market Price Insight</h2>
+
+                <p>
+                    Check current mandi prices of agricultural commodities
+                    across India using official government market data.
+                </p>
+            </div>
+
+            <div class="hero-icon">
+                📊
+            </div>
+        </section>
+
+
+        <section class="search-card">
+
+            <div class="section-heading">
+                <div>
+                    <h3>Find Mandi Price</h3>
+                    <p>Select your location and crop</p>
+                </div>
+
+                <span class="live-dot">
+                    <span></span> Live Data
+                </span>
+            </div>
+
+
+            <div class="form-grid">
+
+                <!-- STATE -->
+                <div class="field">
+                    <label for="state">
+                        State
+                    </label>
+
+                    <select id="state">
+                        <option value="">Loading states...</option>
+                    </select>
+                </div>
+
+
+                <!-- DISTRICT -->
+                <div class="field">
+                    <label for="district">
+                        District
+                    </label>
+
+                    <select id="district" disabled>
+                        <option value="">Select state first</option>
+                    </select>
+                </div>
+
+
+                <!-- MARKET -->
+                <div class="field">
+                    <label for="market">
+                        Market / Mandi
+                    </label>
+
+                    <select id="market" disabled>
+                        <option value="">Select district first</option>
+                    </select>
+                </div>
+
+
+                <!-- COMMODITY -->
+                <div class="field">
+                    <label for="commodity">
+                        Crop / Commodity
+                    </label>
+
+                    <select id="commodity" disabled>
+                        <option value="">Select market first</option>
+                    </select>
+                </div>
+
+            </div>
+
+
+            <button id="searchBtn" class="search-btn">
+                <span>🔎</span>
+                Check Market Price
+            </button>
+
+        </section>
+
+
+        <!-- LOADING -->
+        <div id="loading" class="loading hidden">
+            <div class="loader"></div>
+            <p>Fetching latest mandi data...</p>
+        </div>
+
+
+        <!-- ERROR -->
+        <div id="errorBox" class="error-box hidden">
+            <span>⚠️</span>
+
+            <div>
+                <strong>Unable to fetch market data</strong>
+                <p id="errorMessage"></p>
+            </div>
+        </div>
+
+
+        <!-- RESULTS -->
+        <section id="results" class="results hidden">
+
+            <div class="result-header">
+
+                <div>
+                    <span class="result-label">MARKET INSIGHT</span>
+
+                    <h2 id="resultCommodity">
+                        Wheat
+                    </h2>
+
+                    <p id="resultLocation">
+                        Market • District • State
+                    </p>
+                </div>
+
+                <div class="date-box">
+                    <span>Arrival Date</span>
+                    <strong id="resultDate">--</strong>
+                </div>
+
+            </div>
+
+
+            <div class="price-grid">
+
+                <div class="price-card min">
+                    <span class="price-icon">📉</span>
+
+                    <p>Minimum Price</p>
+
+                    <h3 id="minPrice">
+                        ₹0
+                    </h3>
+
+                    <small>per quintal</small>
+                </div>
+
+
+                <div class="price-card modal">
+                    <span class="price-icon">🎯</span>
+
+                    <p>Modal Price</p>
+
+                    <h3 id="modalPrice">
+                        ₹0
+                    </h3>
+
+                    <small>per quintal</small>
+                </div>
+
+
+                <div class="price-card max">
+                    <span class="price-icon">📈</span>
+
+                    <p>Maximum Price</p>
+
+                    <h3 id="maxPrice">
+                        ₹0
+                    </h3>
+
+                    <small>per quintal</small>
+                </div>
+
+            </div>
+
+
+            <div class="details-card">
+
+                <h3>Market Details</h3>
+
+                <div class="details-grid">
+
+                    <div class="detail">
+                        <span>State</span>
+                        <strong id="detailState">--</strong>
+                    </div>
+
+                    <div class="detail">
+                        <span>District</span>
+                        <strong id="detailDistrict">--</strong>
+                    </div>
+
+                    <div class="detail">
+                        <span>Market / Mandi</span>
+                        <strong id="detailMarket">--</strong>
+                    </div>
+
+                    <div class="detail">
+                        <span>Commodity</span>
+                        <strong id="detailCommodity">--</strong>
+                    </div>
+
+                    <div class="detail">
+                        <span>Variety</span>
+                        <strong id="detailVariety">--</strong>
+                    </div>
+
+                    <div class="detail">
+                        <span>Grade</span>
+                        <strong id="detailGrade">--</strong>
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <div class="source-card">
+
+                <div class="source-icon">
+                    🏛️
+                </div>
+
+                <div>
+                    <strong>Official Government Data</strong>
+
+                    <p>
+                        Source: Ministry of Agriculture and Farmers Welfare,
+                        Government of India — data.gov.in / AGMARKNET
+                    </p>
+                </div>
+
+            </div>
+
+        </section>
+
+    </main>
+
+
+    <footer>
+        <p>
+            Smart Crop Advisor © 2026
+        </p>
+
+        <p>
+            Market data powered by Government of India Open Data
+        </p>
+    </footer>
+
+
+    <script src="market-insight.js"></script>
+
+</body>
+</html>
