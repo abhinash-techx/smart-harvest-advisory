@@ -671,6 +671,7 @@ footer {
 
         flex-direction: column;
     }
+<<<<<<< HEAD
 }
 .logo-placeholder {
     width: 52px;
@@ -692,4 +693,6 @@ footer {
 
     object-fit: contain;
     padding: 5px;
+=======
+>>>>>>> f88917de9e1179878ae13cf42269820599a2244a
 }

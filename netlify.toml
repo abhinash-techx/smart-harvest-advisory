@@ -1,4 +1,5 @@
 [build]
+<<<<<<< HEAD
   publish = "."
   functions = "netlify/functions"
 
@@ -8,11 +9,17 @@
   status = 200
 
 [[redirects]]
+=======
+  functions = "netlify/functions"
+
+[[redirects]]
+>>>>>>> f88917de9e1179878ae13cf42269820599a2244a
   from = "/api/analyze-soil"
   to = "/.netlify/functions/analyze-soil"
   status = 200
 
 [[redirects]]
+<<<<<<< HEAD
   from = "/api/disease"
   to = "/.netlify/functions/disease-detection"
   status = 200
@@ -26,3 +33,8 @@
   from = "/api/weather"
   to = "/.netlify/functions/current-weather"
   status = 200
+=======
+  from = "/api/market-insight"
+  to = "/.netlify/functions/market-insight"
+  status = 200
+>>>>>>> f88917de9e1179878ae13cf42269820599a2244a

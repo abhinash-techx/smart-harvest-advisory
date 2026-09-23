@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 
 /* =========================================================
    SOIL ANALYSIS PAGE
@@ -15,18 +16,31 @@
    ========================================================= */
 
 /* Remove default browser spacing */
+=======
+/* =========================================
+   SMART CROP ADVISOR
+   ANALYZE MY SOIL - CSS
+   ========================================= */
+
+>>>>>>> f88917de9e1179878ae13cf42269820599a2244a
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
+<<<<<<< HEAD
 /* Smooth scrolling when clicking page links */
+=======
+>>>>>>> f88917de9e1179878ae13cf42269820599a2244a
 html {
     scroll-behavior: smooth;
 }
 
+<<<<<<< HEAD
 /* Main page body */
+=======
+>>>>>>> f88917de9e1179878ae13cf42269820599a2244a
 body {
     font-family: Arial, Helvetica, sans-serif;
     background: #f4f8f3;
@@ -34,6 +48,7 @@ body {
     min-height: 100vh;
 }
 
+<<<<<<< HEAD
 /* Make form elements use the same font as the page */
 button,
 input,
@@ -50,6 +65,16 @@ select {
     width: 100%;
     padding: 16px 7%;
 
+=======
+
+/* =========================================
+   HEADER
+   ========================================= */
+
+.header {
+    width: 100%;
+    padding: 18px 7%;
+>>>>>>> f88917de9e1179878ae13cf42269820599a2244a
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -57,12 +82,16 @@ select {
     background: #ffffff;
     border-bottom: 1px solid #e2ebe1;
 
+<<<<<<< HEAD
     /* Header stays at the top while scrolling */
+=======
+>>>>>>> f88917de9e1179878ae13cf42269820599a2244a
     position: sticky;
     top: 0;
     z-index: 1000;
 }
 
+<<<<<<< HEAD
 
 /* Website logo */
 .logo {
@@ -80,6 +109,16 @@ select {
 .language-select {
     padding: 10px 14px;
 
+=======
+.logo {
+    font-size: 22px;
+    font-weight: 700;
+    color: #176b35;
+}
+
+.language-select {
+    padding: 9px 14px;
+>>>>>>> f88917de9e1179878ae13cf42269820599a2244a
     border-radius: 10px;
     border: 1px solid #cbdcca;
 
@@ -87,12 +126,17 @@ select {
     color: #183b1f;
 
     font-size: 14px;
+<<<<<<< HEAD
     font-weight: 700;
+=======
+    font-weight: 600;
+>>>>>>> f88917de9e1179878ae13cf42269820599a2244a
 
     cursor: pointer;
     outline: none;
 }
 
+<<<<<<< HEAD
 
 /* =========================================================
    3. MAIN SOIL ANALYSIS CONTAINER
@@ -120,29 +164,70 @@ select {
 
 
 /* Small green badge above heading */
+=======
+.language-select:focus {
+    border-color: #2e8b57;
+}
+
+
+/* =========================================
+   MAIN CONTAINER
+   ========================================= */
+
+.soil-container {
+    width: 90%;
+    max-width: 1150px;
+    margin: auto;
+    padding: 65px 0;
+}
+
+
+/* =========================================
+   HERO SECTION
+   ========================================= */
+
+.hero-section {
+    text-align: center;
+    max-width: 750px;
+    margin: 0 auto 50px;
+}
+
+>>>>>>> f88917de9e1179878ae13cf42269820599a2244a
 .badge {
     display: inline-block;
 
     padding: 8px 16px;
+<<<<<<< HEAD
     margin-bottom: 17px;
 
+=======
+>>>>>>> f88917de9e1179878ae13cf42269820599a2244a
     border-radius: 50px;
 
     background: #e3f5e7;
     color: #19713a;
 
     font-size: 14px;
+<<<<<<< HEAD
     font-weight: 800;
 }
 
 
 /* Main page heading */
+=======
+    font-weight: 700;
+
+    margin-bottom: 18px;
+}
+
+>>>>>>> f88917de9e1179878ae13cf42269820599a2244a
 .hero-section h1 {
     font-size: clamp(34px, 5vw, 58px);
     line-height: 1.1;
 
     color: #123c1e;
 
+<<<<<<< HEAD
     margin-bottom: 16px;
 }
 
@@ -153,10 +238,17 @@ select {
 
     margin: auto;
 
+=======
+    margin-bottom: 18px;
+}
+
+.hero-section p {
+>>>>>>> f88917de9e1179878ae13cf42269820599a2244a
     font-size: 17px;
     line-height: 1.7;
 
     color: #647268;
+<<<<<<< HEAD
 }
 
 
@@ -185,10 +277,38 @@ select {
     background: #ffffff;
 
     border-radius: 24px;
+=======
+
+    max-width: 650px;
+    margin: auto;
+}
+
+
+/* =========================================
+   ANALYSIS OPTIONS
+   ========================================= */
+
+.analysis-options {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 28px;
+
+    margin-bottom: 35px;
+}
+
+.analysis-card {
+    background: #ffffff;
+
+    padding: 38px;
+
+    border-radius: 24px;
+
+>>>>>>> f88917de9e1179878ae13cf42269820599a2244a
     border: 1px solid #e0e9df;
 
     box-shadow: 0 12px 35px rgba(31, 73, 40, 0.08);
 
+<<<<<<< HEAD
     transition: 0.25s;
 }
 
@@ -198,10 +318,23 @@ select {
     transform: translateY(-5px);
 
     box-shadow: 0 18px 40px rgba(31, 73, 40, 0.13);
+=======
+    transition:
+        transform 0.3s ease,
+        box-shadow 0.3s ease,
+        border-color 0.3s ease;
+}
+
+.analysis-card:hover {
+    transform: translateY(-7px);
+
+    box-shadow: 0 20px 45px rgba(31, 73, 40, 0.14);
+>>>>>>> f88917de9e1179878ae13cf42269820599a2244a
 
     border-color: #9bc5a3;
 }
 
+<<<<<<< HEAD
 
 /* Large image area inside card */
 .card-image {
@@ -322,11 +455,17 @@ select {
     height: 48px;
 
     margin-bottom: 15px;
+=======
+.card-icon {
+    width: 65px;
+    height: 65px;
+>>>>>>> f88917de9e1179878ae13cf42269820599a2244a
 
     display: flex;
     align-items: center;
     justify-content: center;
 
+<<<<<<< HEAD
     border-radius: 14px;
 
     background: #e8f6ea;
@@ -385,11 +524,57 @@ select {
 
 
 /* Green check mark before each list item */
+=======
+    border-radius: 18px;
+
+    background: #e8f6ea;
+
+    font-size: 30px;
+
+    margin-bottom: 22px;
+}
+
+.analysis-card h2 {
+    font-size: 26px;
+    color: #174c27;
+
+    margin-bottom: 14px;
+}
+
+.analysis-card p {
+    color: #66736a;
+    line-height: 1.7;
+
+    margin-bottom: 20px;
+}
+
+
+/* =========================================
+   CARD LIST
+   ========================================= */
+
+.analysis-card ul {
+    list-style: none;
+    margin-bottom: 28px;
+}
+
+.analysis-card li {
+    position: relative;
+
+    padding-left: 27px;
+    margin-bottom: 12px;
+
+    color: #405247;
+    font-size: 15px;
+}
+
+>>>>>>> f88917de9e1179878ae13cf42269820599a2244a
 .analysis-card li::before {
     content: "✓";
 
     position: absolute;
     left: 0;
+<<<<<<< HEAD
 
     color: #258443;
 
@@ -411,12 +596,34 @@ select {
     padding: 13px 18px;
 
     border: 0;
+=======
+    top: 0;
+
+    color: #258443;
+    font-weight: bold;
+}
+
+
+/* =========================================
+   BUTTONS
+   ========================================= */
+
+.analysis-btn,
+.submit-btn,
+.analyze-upload-btn {
+    width: 100%;
+
+    padding: 14px 20px;
+
+    border: none;
+>>>>>>> f88917de9e1179878ae13cf42269820599a2244a
     border-radius: 12px;
 
     background: #21863e;
     color: #ffffff;
 
     font-size: 15px;
+<<<<<<< HEAD
     font-weight: 800;
 
     cursor: pointer;
@@ -440,19 +647,58 @@ select {
 /* =========================================================
    9. INFORMATION BOX
    ========================================================= */
+=======
+    font-weight: 700;
+
+    cursor: pointer;
+
+    transition:
+        background 0.25s ease,
+        transform 0.2s ease,
+        box-shadow 0.25s ease;
+}
+
+.analysis-btn:hover,
+.submit-btn:hover,
+.analyze-upload-btn:hover {
+    background: #176b30;
+
+    transform: translateY(-2px);
+
+    box-shadow: 0 8px 20px rgba(33, 134, 62, 0.22);
+}
+
+.analysis-btn:active,
+.submit-btn:active,
+.analyze-upload-btn:active {
+    transform: translateY(0);
+}
+
+
+/* =========================================
+   INFORMATION BOX
+   ========================================= */
+>>>>>>> f88917de9e1179878ae13cf42269820599a2244a
 
 .info-box {
     display: flex;
     align-items: flex-start;
+<<<<<<< HEAD
 
     gap: 15px;
 
     padding: 20px 23px;
     margin-top: 10px;
+=======
+    gap: 16px;
+
+    padding: 22px 25px;
+>>>>>>> f88917de9e1179878ae13cf42269820599a2244a
 
     background: #eef7ed;
 
     border: 1px solid #d4e8d2;
+<<<<<<< HEAD
     border-radius: 18px;
 }
 
@@ -480,10 +726,31 @@ select {
 
     line-height: 1.65;
 
+=======
+
+    border-radius: 18px;
+
+    margin-top: 10px;
+}
+
+.info-icon {
+    font-size: 25px;
+}
+
+.info-box h3 {
+    color: #245b31;
+    margin-bottom: 7px;
+}
+
+.info-box p {
+    color: #647268;
+    line-height: 1.6;
+>>>>>>> f88917de9e1179878ae13cf42269820599a2244a
     font-size: 14px;
 }
 
 
+<<<<<<< HEAD
 /* =========================================================
    10. MODAL / POPUP
    ========================================================= */
@@ -494,12 +761,25 @@ select {
 
     inset: 0;
 
+=======
+/* =========================================
+   MODAL
+   ========================================= */
+
+.modal {
+    position: fixed;
+    inset: 0;
+
+    background: rgba(10, 30, 15, 0.55);
+
+>>>>>>> f88917de9e1179878ae13cf42269820599a2244a
     display: flex;
     align-items: center;
     justify-content: center;
 
     padding: 20px;
 
+<<<<<<< HEAD
     background: rgba(10, 30, 15, 0.58);
 
     z-index: 2000;
@@ -509,10 +789,18 @@ select {
 
 
 /* Completely hide an element */
+=======
+    z-index: 2000;
+
+    backdrop-filter: blur(5px);
+}
+
+>>>>>>> f88917de9e1179878ae13cf42269820599a2244a
 .hidden {
     display: none !important;
 }
 
+<<<<<<< HEAD
 
 /* Main popup box */
 .modal-content {
@@ -873,11 +1161,102 @@ select {
     border: 2px dashed #b4c9b7;
 
     border-radius: 17px;
+=======
+.modal-content {
+    position: relative;
+
+    width: 100%;
+    max-width: 520px;
+
+    max-height: 90vh;
+    overflow-y: auto;
+
+    background: #ffffff;
+
+    padding: 35px;
+
+    border-radius: 25px;
+
+    box-shadow: 0 25px 70px rgba(0, 0, 0, 0.25);
+
+    animation: modalAppear 0.25s ease;
+}
+
+@keyframes modalAppear {
+    from {
+        opacity: 0;
+        transform: translateY(20px) scale(0.97);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+    }
+}
+
+.modal-content h2 {
+    font-size: 27px;
+    color: #174c27;
+
+    margin-bottom: 10px;
+}
+
+.modal-content > p {
+    color: #69756d;
+    line-height: 1.6;
+    margin-bottom: 25px;
+}
+
+
+/* =========================================
+   CLOSE BUTTON
+   ========================================= */
+
+.close-btn {
+    position: absolute;
+
+    top: 15px;
+    right: 18px;
+
+    width: 36px;
+    height: 36px;
+
+    border: none;
+    border-radius: 50%;
+
+    background: #edf3ed;
+    color: #31553a;
+
+    font-size: 24px;
+
+    cursor: pointer;
+
+    transition: 0.2s ease;
+}
+
+.close-btn:hover {
+    background: #dcebdd;
+    transform: rotate(90deg);
+}
+
+
+/* =========================================
+   IMAGE UPLOAD
+   ========================================= */
+
+.upload-area {
+    border: 2px dashed #a9c8ad;
+
+    border-radius: 18px;
+
+    padding: 35px 20px;
+>>>>>>> f88917de9e1179878ae13cf42269820599a2244a
 
     text-align: center;
 
     background: #f7fbf6;
 
+<<<<<<< HEAD
     margin-bottom: 18px;
 }
 
@@ -1008,10 +1387,91 @@ select {
     font-weight: 800;
 
     color: #31533a;
+=======
+    margin-bottom: 20px;
+
+    transition: 0.25s ease;
+}
+
+.upload-area:hover {
+    border-color: #2e8b57;
+    background: #f0f8ef;
+}
+
+.upload-icon {
+    font-size: 45px;
+    margin-bottom: 15px;
+}
+
+.upload-label {
+    display: inline-block;
+
+    padding: 11px 18px;
+
+    border-radius: 10px;
+
+    background: #e4f2e4;
+    color: #176b35;
+
+    font-weight: 700;
+
+    cursor: pointer;
+
+    transition: 0.2s ease;
+}
+
+.upload-label:hover {
+    background: #d4ead6;
+}
+
+#soilImage {
+    display: none;
+}
+
+.file-name {
+    margin-top: 13px;
+
+    color: #4c6251;
+
+    font-size: 14px;
+}
+
+
+/* =========================================
+   SMALL NOTE
+   ========================================= */
+
+.small-note {
+    text-align: center;
+
+    font-size: 12px !important;
+
+    color: #7a867e !important;
+
+    margin-top: 15px;
+}
+
+
+/* =========================================
+   MANUAL FORM
+   ========================================= */
+
+#soilForm {
+    display: flex;
+    flex-direction: column;
+}
+
+#soilForm label {
+    font-size: 14px;
+    font-weight: 700;
+
+    color: #31543a;
+>>>>>>> f88917de9e1179878ae13cf42269820599a2244a
 
     margin-bottom: 7px;
 }
 
+<<<<<<< HEAD
 
 /* Location control */
 .location-control {
@@ -1192,6 +1652,133 @@ select {
 
 
 /* Spinner rotation animation */
+=======
+#soilForm input,
+#soilForm select {
+    width: 100%;
+
+    padding: 13px 14px;
+
+    margin-bottom: 17px;
+
+    border: 1px solid #cddccd;
+
+    border-radius: 10px;
+
+    background: #fbfdfb;
+
+    color: #243b29;
+
+    font-size: 14px;
+
+    outline: none;
+
+    transition: 0.2s ease;
+}
+
+#soilForm input:focus,
+#soilForm select:focus {
+    border-color: #3a9554;
+
+    box-shadow: 0 0 0 3px rgba(58, 149, 84, 0.1);
+
+    background: #ffffff;
+}
+
+#soilForm input::placeholder {
+    color: #9aa59d;
+}
+
+.submit-btn {
+    margin-top: 8px;
+}
+
+
+/* =========================================
+   RESULT SECTION
+   ========================================= */
+
+.soil-result {
+    width: 90%;
+    max-width: 1000px;
+
+    margin: 0 auto 60px;
+}
+
+.result-card {
+    background: #ffffff;
+
+    border-radius: 24px;
+
+    padding: 35px;
+
+    border: 1px solid #dfe9df;
+
+    box-shadow: 0 15px 40px rgba(31, 73, 40, 0.09);
+}
+
+.result-card h2 {
+    color: #174c27;
+
+    margin-bottom: 25px;
+}
+
+#resultContent {
+    color: #4d5e52;
+    line-height: 1.7;
+}
+
+
+/* =========================================
+   RESULT ITEMS
+   ========================================= */
+
+.result-item {
+    background: #f5faf4;
+
+    border: 1px solid #dfebdd;
+
+    border-radius: 15px;
+
+    padding: 18px;
+
+    margin-bottom: 15px;
+}
+
+.result-item h3 {
+    color: #236438;
+    margin-bottom: 6px;
+}
+
+.result-item p {
+    color: #637168;
+}
+
+
+/* =========================================
+   LOADING STATE
+   ========================================= */
+
+.loading {
+    text-align: center;
+    padding: 30px;
+}
+
+.loading-spinner {
+    width: 42px;
+    height: 42px;
+
+    border: 4px solid #dcebdd;
+    border-top-color: #258443;
+
+    border-radius: 50%;
+
+    margin: 0 auto 15px;
+
+    animation: spin 0.8s linear infinite;
+}
+
+>>>>>>> f88917de9e1179878ae13cf42269820599a2244a
 @keyframes spin {
     to {
         transform: rotate(360deg);
@@ -1199,6 +1786,7 @@ select {
 }
 
 
+<<<<<<< HEAD
 /* =========================================================
    24. SOIL ANALYSIS RESULT SECTION
    ========================================================= */
@@ -1340,10 +1928,72 @@ select {
 
 
     /* Smaller logo */
+=======
+/* =========================================
+   ERROR MESSAGE
+   ========================================= */
+
+.error-message {
+    padding: 15px 18px;
+
+    border-radius: 12px;
+
+    background: #fff1f1;
+
+    border: 1px solid #f0cccc;
+
+    color: #a33b3b;
+
+    line-height: 1.5;
+}
+
+
+/* =========================================
+   TABLET
+   ========================================= */
+
+@media (max-width: 800px) {
+
+    .header {
+        padding: 16px 5%;
+    }
+
+    .soil-container {
+        width: 92%;
+        padding: 50px 0;
+    }
+
+    .analysis-options {
+        grid-template-columns: 1fr;
+    }
+
+    .analysis-card {
+        padding: 30px;
+    }
+
+    .hero-section {
+        margin-bottom: 35px;
+    }
+
+}
+
+
+/* =========================================
+   MOBILE
+   ========================================= */
+
+@media (max-width: 520px) {
+
+    .header {
+        padding: 14px 5%;
+    }
+
+>>>>>>> f88917de9e1179878ae13cf42269820599a2244a
     .logo {
         font-size: 17px;
     }
 
+<<<<<<< HEAD
 
     /* Main container */
     .soil-container {
@@ -1403,4 +2053,74 @@ select {
     .buy-links .secondary-btn {
         width: 100%;
     }
+=======
+    .language-select {
+        padding: 8px 9px;
+        font-size: 12px;
+    }
+
+    .soil-container {
+        width: 92%;
+        padding: 40px 0;
+    }
+
+    .hero-section h1 {
+        font-size: 36px;
+    }
+
+    .hero-section p {
+        font-size: 15px;
+    }
+
+    .analysis-card {
+        padding: 24px;
+        border-radius: 20px;
+    }
+
+    .analysis-card h2 {
+        font-size: 22px;
+    }
+
+    .card-icon {
+        width: 55px;
+        height: 55px;
+        font-size: 25px;
+    }
+
+    .info-box {
+        padding: 18px;
+    }
+
+    .modal {
+        padding: 12px;
+    }
+
+    .modal-content {
+        padding: 27px 20px;
+        border-radius: 20px;
+    }
+
+    .modal-content h2 {
+        font-size: 23px;
+        padding-right: 35px;
+    }
+
+    .result-card {
+        padding: 24px 18px;
+    }
+
+}
+
+
+/* =========================================
+   ACCESSIBILITY
+   ========================================= */
+
+button:focus-visible,
+select:focus-visible,
+input:focus-visible,
+label:focus-visible {
+    outline: 3px solid rgba(46, 139, 87, 0.25);
+    outline-offset: 2px;
+>>>>>>> f88917de9e1179878ae13cf42269820599a2244a
 }

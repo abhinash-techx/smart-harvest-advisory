@@ -66,7 +66,11 @@ button {
 }
 
 .logo-placeholder {
+<<<<<<< HEAD
     width: 52px;
+=======
+    width: px;
+>>>>>>> f88917de9e1179878ae13cf42269820599a2244a
     height: 52px;
 
     display: flex;
@@ -331,6 +335,7 @@ button {
 
     color: #506058;
 }
+<<<<<<< HEAD
 /*  special three button*/
 
 .module-image {
@@ -347,6 +352,9 @@ button {
     object-position: center;
     display: block;
 }
+=======
+
+>>>>>>> f88917de9e1179878ae13cf42269820599a2244a
 
 /* HERO BUTTONS */
 
@@ -425,7 +433,10 @@ button {
 
 /* TRUST BAR */
 
+<<<<<<< HEAD
 
+=======
+>>>>>>> f88917de9e1179878ae13cf42269820599a2244a
 .trust-bar {
     display: flex;
     flex-wrap: wrap;
@@ -1390,6 +1401,7 @@ footer {
     .ai-visual-placeholder {
         height: 250px;
     }
+<<<<<<< HEAD
 }
 
 /* ===== External Hackathon Module Cards ===== */
@@ -1429,3 +1441,6 @@ footer {
 
 /* ================= FARM INTELLIGENCE HOME ================= */
 .farm-intelligence-home .module-grid{align-items:stretch}.farm-intelligence-home .module-card{height:100%;display:flex;flex-direction:column}.farm-intelligence-home .module-card p{flex:1}.farm-intelligence-home .image-placeholder{border-radius:16px;background:#f5fbf7;color:#6a8879;font-size:11px;font-weight:800;letter-spacing:.4px;margin-bottom:18px}
+=======
+}
+>>>>>>> f88917de9e1179878ae13cf42269820599a2244a

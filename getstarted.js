@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 
 const languageSelect = document.getElementById("languageSelect");
 if (languageSelect) {
@@ -6,6 +7,8 @@ if (languageSelect) {
         localStorage.setItem("sca-language", languageSelect.value);
     });
 }
+=======
+>>>>>>> f88917de9e1179878ae13cf42269820599a2244a
 const API_URL =
     "/.netlify/functions/recommend";
 
@@ -22,7 +25,10 @@ recommendButton.addEventListener(
         // ================================
 
         const farmerData = {
+<<<<<<< HEAD
         language: localStorage.getItem("sca-language") || "en",
+=======
+>>>>>>> f88917de9e1179878ae13cf42269820599a2244a
 
             farmerName:
                 document.getElementById(
@@ -337,6 +343,7 @@ function showRecommendations(
     recommendations,
     aiAdvice
 ) {
+<<<<<<< HEAD
     if (aiAdvice && typeof aiAdvice === "object") {
         const points = Array.isArray(aiAdvice.keyPoints) ? aiAdvice.keyPoints : [];
         const plan = Array.isArray(aiAdvice.cropPlan) ? aiAdvice.cropPlan : [];
@@ -347,6 +354,8 @@ function showRecommendations(
             aiAdvice.caution ? `Caution: ${aiAdvice.caution}` : ""
         ].filter(Boolean).join("\n\n");
     }
+=======
+>>>>>>> f88917de9e1179878ae13cf42269820599a2244a
 
 
     // Remove previous result
